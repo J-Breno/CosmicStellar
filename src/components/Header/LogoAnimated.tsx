@@ -1,0 +1,73 @@
+'use client';
+import { useEffect, useRef } from "react";
+
+export default function LogoAnimated() {
+  const logoRef = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (logoRef.current) {
+        logoRef.current.classList.add("animar-logo");
+      }
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  return (
+    <svg 
+      ref={logoRef}
+      width="384" 
+      height="16" 
+      viewBox="0 0 384 16" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      className="logo-cosmic-stellar opacity-0 transition-opacity duration-1000"
+    >
+      <g id="LOGO">
+        <g id="COSMIC">
+          <g id="O" className="opacity-0">
+            <path id="Vector 8" d="M42 1V15H30V1H42ZM31 14H41V2H31V14ZM39 4V12H33V4H39Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="C" className="opacity-0">
+            <path id="Vector 7" d="M14.501 1L14.2324 2H3V13.2676H14.6973L14.2324 15H1V1H14.501Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="C_2" className="opacity-0">
+            <path id="Vector 7_2" d="M156.811 1L156.542 2H145.31V13.2676H157.007L156.542 15H143.31V1H156.811Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="S" className="opacity-0">
+            <path id="Vector 6" d="M71.3105 1L69.8105 3H59.3096V7H72.3096V15H57.7324L58.8867 13H70.3096V9H57.3096V1H71.3105Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <path id="m" d="M108.81 1.5V14.5H106.31V4H98.8101V14.5H96.8101V4H89.3101V14.5H87.8101V1.5H108.81Z" stroke="#E6E6E6" strokeWidth="3" className="opacity-0"/>
+          <path id="i" d="M127.81 3.62109V12.3789L126.31 13.8789L124.81 12.3789V3.62109L126.31 2.12109L127.81 3.62109Z" stroke="#E6E6E6" strokeWidth="3" className="opacity-0"/>
+        </g>
+        <g id="STELLAR">
+          <g id="R" className="opacity-0">
+            <path id="r" d="M379.622 1L378.622 3H372.24V15H370.24V1H379.622ZM381.96 1L381.46 3H380.858L381.858 1H381.96Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="t" className="opacity-0">
+            <path id="Vector 9" d="M232.002 1L231.002 3H225.62V15H223.62V3H218.119L216.619 1H232.002Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="S_2" className="opacity-0">
+            <path id="Vector 7_3" d="M199.621 1L198.121 3H187.62V7H200.62V15H186.042L187.197 13H198.62V9H185.62V1H199.621Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="E" className="opacity-0">
+            <path id="Vector 1" d="M263.197 1L262.043 3H249.507L248.353 1H263.197Z" stroke="#E6E6E6" strokeWidth="2"/>
+            <path id="Vector 2" d="M263.197 7L262.043 9H249.507L248.353 7H263.197Z" stroke="#E6E6E6" strokeWidth="2"/>
+            <path id="Vector 3" d="M263.197 13L262.043 15H249.507L248.353 13H263.197Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="L" className="opacity-0">
+            <path id="Vector 10" d="M280.93 1V13H293.312L292.312 15H278.93V1H280.93Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="L_2" className="opacity-0">
+            <path id="Vector 10_2" d="M310.93 1V13H323.312L322.312 15H308.93V1H310.93Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+          <g id="A" className="opacity-0">
+            <path id="Vector 5" d="M354.93 7V15H352.93V9H340.93V15H338.93V7H354.93Z" stroke="#E6E6E6" strokeWidth="2"/>
+            <path id="Vector 4" d="M354.507 1L353.353 3H340.817L339.662 1H354.507Z" stroke="#E6E6E6" strokeWidth="2"/>
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
