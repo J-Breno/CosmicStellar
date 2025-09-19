@@ -804,3 +804,147 @@ header {
 .space-bg {
   background: linear-gradient(135deg, #0f0f1f 0%, #1a1a2e 50%, #16213e 100%);
 }
+
+.font-star-wars {
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Animação de hiperespaço */
+@keyframes hyperspace {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 60%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-hyperspace {
+  animation: hyperspace 2s ease-in-out infinite;
+}
+
+/* Animação de flutuação */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(3deg);
+  }
+  66% {
+    transform: translateY(10px) rotate(-3deg);
+  }
+}
+
+.animate-float {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Efeito de texto brilhante */
+.glow-text-yellow {
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.7),
+               0 0 10px rgba(255, 255, 0, 0.5),
+               0 0 15px rgba(255, 255, 0, 0.3);
+}
+
+/* Efeito de piscar (para alertas) */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s linear infinite;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-40px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Efeito de gradiente animado para os botões */
+.gradient-border {
+  position: relative;
+  border: double 2px transparent;
+  background-image: 
+    linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.8)),
+    linear-gradient(45deg, #06b6d4, #8b5cf6);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.gradient-border:hover {
+  background-image: 
+    linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.6)),
+    linear-gradient(45deg, #06b6d4, #8b5cf6);
+}
+
+/* Efeito de digitação para textos */
+.typing-effect {
+  overflow: hidden;
+  border-right: 2px solid #06b6d4;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #06b6d4 }
+}
+
+/* Efeito de texto amarelo brilhante (Star Wars) */
+.glow-text-yellow {
+  text-shadow: 0 0 5px rgba(255, 255, 0, 0.7),
+               0 0 10px rgba(255, 255, 0, 0.5),
+               0 0 15px rgba(255, 255, 0, 0.3);
+}
+
+/* Estilo para inputs com tema Star Wars */
+input, textarea {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
+}
+
+/* Efeito de foco para inputs */
+input:focus, textarea:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* Animação de digitação (terminal) */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: yellow }
+}
+
+.typing-effect {
+  overflow: hidden;
+  border-right: .15em solid yellow;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
