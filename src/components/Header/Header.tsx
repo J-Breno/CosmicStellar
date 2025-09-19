@@ -27,7 +27,8 @@ export default function Header() {
   return (
     <header 
       ref={headerRef}
-      className={`backdrop-blur-md bg-[#0a0a0a]/80 border-b border-[#4a4af0]/30 sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'}`}
+      className={`backdrop-blur-[1px] bg-[#0a0a0a]/30 border-b border-[#ffffff]/30 sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'py-3' : 'py-5'} shadow-[0_4px_6px_-1px_rgba(255,255,255,0.3)]`}
+      // VOLTEI para sticky (que é o correto para acompanhar scroll)
     >
       <div className="absolute inset-0 -z-10 opacity-30">
         <Canvas camera={{ position: [0, 0, 1] }}>

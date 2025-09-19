@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Orbitron } from "next/font/google";
 import "./globals.css";
+import GalacticLoading from "@/components/ui/GalacticLoading";
 
 const poppins = Poppins({
   variable: "--font-body", 
@@ -27,6 +28,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${poppins.variable} ${orbitron.variable} font-body antialiased`}>
+        <GalacticLoading />
         {children}
       </body>
     </html>

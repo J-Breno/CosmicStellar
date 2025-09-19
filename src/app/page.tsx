@@ -1,9 +1,15 @@
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import SpaceBackground from "@/components/SpaceBackground";
 
 export default function Home() {
   return (
-    <div>
-      <Header />
-    </div>
+    <>
+      <SpaceBackground />
+      <div className="relative z-10 bg-transparent">
+        <Header />
+        <Hero />
+      </div>
+    </>
   );
 }
