@@ -26,7 +26,7 @@ export default function DesktopMenu({ menuItems, activeSection, onItemClick }: D
           transition={{ delay: index * 0.1 }}
           onClick={() => {
             if (item.id !== "logo") {
-              onItemClick(item.id); 
+              onItemClick(item.id as ScrollableMenuItemId); 
             }
           }}
           className={`${getMenuItemClass(item.id, index, activeSection)} group relative`}

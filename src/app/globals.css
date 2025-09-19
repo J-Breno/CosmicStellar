@@ -665,3 +665,93 @@ header {
   display: flex;
   align-items: center;
 }
+
+/* Adicione estas animações ao seu global.css */
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+@keyframes cosmic-pulse {
+  0%, 100% { 
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes space-float {
+  0%, 100% { 
+    transform: translateY(0px);
+  }
+  50% { 
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes stellar-twinkle {
+  0%, 100% { 
+    opacity: 0.3;
+  }
+  50% { 
+    opacity: 1;
+  }
+}
+
+.animate-cosmic-pulse {
+  animation: cosmic-pulse 3s ease-in-out infinite;
+}
+
+.animate-space-float {
+  animation: space-float 4s ease-in-out infinite;
+}
+
+.animate-stellar-twinkle {
+  animation: stellar-twinkle 2s ease-in-out infinite;
+}
+
+.glow-text-purple {
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.5),
+               0 0 20px rgba(192, 132, 252, 0.3),
+               0 0 30px rgba(192, 132, 252, 0.2);
+}
+
+.glow-box-purple {
+  box-shadow: 0 0 20px rgba(192, 132, 252, 0.3),
+              0 0 40px rgba(192, 132, 252, 0.2),
+              0 0 60px rgba(192, 132, 252, 0.1);
+}
+
+.transition-cosmic {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .cosmic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stellar-data {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -55,7 +55,7 @@ export default function Hero() {
   const info = planetInfo[currentPlanet as Planet];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden hero-container -mt-6">
+    <section id='home' className="relative min-h-screen flex items-center justify-center overflow-hidden hero-container -mt-6">
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="lg:w-1/2 text-white">
