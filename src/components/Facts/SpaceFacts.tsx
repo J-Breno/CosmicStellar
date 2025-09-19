@@ -1,5 +1,5 @@
 'use client';
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useInView } from 'framer-motion';
 
@@ -44,6 +44,25 @@ function StarIcon() {
     </svg>
   );
 }
+
+// Predefined star positions to avoid hydration mismatch
+const starPositions = [
+  { top: "13.14%", left: "91.97%", width: "1.18px", height: "3.47px", opacity: 0.65 },
+  { top: "38.63%", left: "90.74%", width: "3.97px", height: "1.10px", opacity: 0.52 },
+  { top: "83.19%", left: "47.16%", width: "1.65px", height: "1.60px", opacity: 0.49 },
+  { top: "62.15%", left: "0.74%", width: "3.85px", height: "2.75px", opacity: 0.70 },
+  { top: "74.09%", left: "4.28%", width: "2.11px", height: "2.93px", opacity: 0.93 },
+  { top: "14.98%", left: "28.16%", width: "3.33px", height: "2.58px", opacity: 0.92 },
+  { top: "78.39%", left: "39.61%", width: "3.36px", height: "1.18px", opacity: 0.66 },
+  { top: "45.09%", left: "16.87%", width: "3.72px", height: "3.95px", opacity: 0.52 },
+  { top: "88.76%", left: "17.75%", width: "1.86px", height: "2.29px", opacity: 0.55 },
+  { top: "54.01%", left: "66.90%", width: "1.39px", height: "1.53px", opacity: 0.85 },
+  { top: "27.39%", left: "16.76%", width: "1.79px", height: "2.21px", opacity: 0.75 },
+  { top: "30.58%", left: "80.63%", width: "2.65px", height: "2.03px", opacity: 0.68 },
+  { top: "4.62%", left: "75.67%", width: "3.23px", height: "3.67px", opacity: 0.96 },
+  { top: "59.36%", left: "76.34%", width: "1.02px", height: "1.61px", opacity: 0.70 },
+  { top: "11.47%", left: "49.75%", width: "1.11px", height: "1.66px", opacity: 0.84 }
+];
 
 export default function SpaceFactsSection() {
   const [openItems, setOpenItems] = useState<number[]>([]);
@@ -94,7 +113,6 @@ export default function SpaceFactsSection() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              {/* Efeito de brilho sutil atrás do card */}
               <div className="absolute -inset-2 bg-gradient-to-r from-purple-600/20 to-blue-600/20 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <div className="relative bg-gradient-to-b from-purple-900/20 to-blue-900/20 backdrop-blur-md border border-purple-500/30 rounded-xl overflow-hidden transition-all duration-300 hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/10 group">
@@ -167,7 +185,6 @@ export default function SpaceFactsSection() {
           ))}
         </div>
 
-        {/* Elemento decorativo no final da seção */}
         <motion.div 
           className="mt-16 text-center"
           initial={{ opacity: 0 }}
@@ -206,18 +223,17 @@ export default function SpaceFactsSection() {
         </motion.div>
       </div>
 
-      {/* Efeitos de partículas locais (sem interferir com o background global) */}
       <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none overflow-hidden">
-        {[...Array(15)].map((_, i) => (
+        {starPositions.map((star, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-white"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              width: `${Math.random() * 3 + 1}px`,
-              height: `${Math.random() * 3 + 1}px`,
-              opacity: Math.random() * 0.7 + 0.3,
+              top: star.top,
+              left: star.left,
+              width: star.width,
+              height: star.height,
+              opacity: star.opacity,
             }}
             animate={{
               opacity: [0, 1, 0],

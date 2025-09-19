@@ -43,12 +43,10 @@ export default function Contact() {
       ref={sectionRef}
       className="min-h-screen py-20 px-4 relative overflow-hidden"
     >
-      {/* Efeito de estrelas em movimento (parallax) */}
       <div className="stars pointer-events-none"></div>
       <div className="stars2 pointer-events-none"></div>
       <div className="stars3 pointer-events-none"></div>
       
-      {/* Elementos decorativos Star Wars */}
       <div className="absolute top-20 left-10 opacity-30 pointer-events-none">
         <DeathStarIcon className="w-40 h-40 text-purple-500" />
       </div>
@@ -97,7 +95,6 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="bg-gradient-to-br from-purple-900/20 to-blue-900/20 backdrop-blur-lg border border-purple-500/30 rounded-xl p-8 shadow-2xl shadow-cyan-500/10 relative overflow-hidden"
             >
-              {/* Efeito de terminal Star Wars - com pointer-events: none */}
               <div className="absolute top-0 left-0 w-full h-1 bg-cyan-400 animate-pulse pointer-events-none"></div>
               <div className="absolute top-0 left-0 w-full h-full bg-purple-900/10 pointer-events-none"></div>
               <div className="absolute top-0 left-0 w-full h-full terminal-scanline pointer-events-none"></div>
@@ -201,7 +198,6 @@ export default function Contact() {
                         )}
                       </span>
                       
-                      {/* Efeito de brilho no hover */}
                       <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                     </button>
 
@@ -238,7 +234,6 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="text-center bg-gradient-to-br from-purple-900/20 to-cyan-900/20 backdrop-blur-lg border border-cyan-500/50 rounded-xl p-12 shadow-2xl shadow-cyan-500/10 relative"
             >
-              {/* Efeito de terminal Star Wars - com pointer-events: none */}
               <div className="absolute top-0 left-0 w-full h-1 bg-cyan-400 animate-pulse pointer-events-none"></div>
               <div className="absolute top-0 left-0 w-full h-full bg-purple-900/10 pointer-events-none"></div>
               <div className="absolute top-0 left-0 w-full h-full terminal-scanline pointer-events-none"></div>
