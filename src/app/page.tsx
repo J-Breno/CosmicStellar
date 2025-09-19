@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <SpaceBackground />
-      <div className="relative z-10 bg-transparent">
+      <div className="relative z-10 bg-transparent main-content">
         <Header />
         <Hero />
       </div>

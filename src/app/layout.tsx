@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Orbitron } from "next/font/google";
 import "./globals.css";
 import GalacticLoading from "@/components/ui/GalacticLoading";
+import { PlanetCarouselProvider } from "@/context/PlanetCarouselContext";
 
 const poppins = Poppins({
   variable: "--font-body", 
@@ -29,7 +30,9 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${poppins.variable} ${orbitron.variable} font-body antialiased`}>
         <GalacticLoading />
+        <PlanetCarouselProvider>
         {children}
+      </PlanetCarouselProvider>
       </body>
     </html>
   );
